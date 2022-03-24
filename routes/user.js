@@ -6,7 +6,7 @@ const usersController = require('../controllers/usersController');
 const userValidator = require('../validations/userValidator'); 
 const jwtToken = require("../validations/jwtValidation");
 
-router.post('/login,', userValidator.id, usersController.getLogin);
+router.post('/login', userValidator.id, usersController.getLogin);
 router.get('/user', jwtToken.validateToken, userValidator.id ,usersController.getUsers);
 router.get('/users', jwtToken.validateToken, usersController.getUsers);
 router.post('/user,', userValidator.add, usersController.getUser);
